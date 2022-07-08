@@ -61,7 +61,7 @@ class InputField extends StatelessWidget {
           borderRadius: BorderRadius.circular(8),
           borderSide: const BorderSide(
             width: 1,
-            color: Colors.lightBlue,
+            color: Colors.green,
           ),
         ),
         suffixIcon: suffixIcon ?? null,

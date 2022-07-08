@@ -58,7 +58,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     Text(
                       "MyAuthApp",
                       style: TextStyle(
-                        color: Colors.lightBlue,
+                        color: Colors.green,
                         fontWeight: FontWeight.bold,
                         fontSize: 22,
                       ),
@@ -130,7 +130,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           child: const Text(
                             "Forgot Password?",
                             style: TextStyle(
-                              color: Colors.blue,
+                              color: Colors.green,
                               fontSize: 16,
                               fontWeight: FontWeight.w400,
                             ),

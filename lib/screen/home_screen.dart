@@ -15,7 +15,12 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final user = FirebaseAuth.instance.currentUser!;
-
+  @override
+  void initState() {
+    // TODO: implement initState
+    print(user);
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
@@ -30,16 +35,17 @@ class _HomeScreenState extends State<HomeScreen> {
       body: SizedBox(
         width: width,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-
             Padding(
               padding: const EdgeInsets.only(bottom: 50),
               child: Text(
-                "Welcome",
+                "Welcome to MyAuthApp",
                 style: TextStyle(
                   color: Colors.black,
-                  fontSize: 40,
-                  fontWeight: FontWeight.w400,
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 0.7
                 ),
               ),
             ),
@@ -66,10 +72,12 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 10,
             ),
             ElevatedButton(
-              onPressed: () {
+              style: ElevatedButton.styleFrom(
+                  minimumSize: Size(width / 1.1, height / 15)),
+              onPressed: () async {
                 showMyCupertinoDialoge();
               },
-              child: const Text("Log out"),
+              child: const Text("Log Out"),
             ),
           ],
         ),

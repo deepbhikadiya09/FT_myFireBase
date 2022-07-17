@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
+import '../component/common_function.dart';
 import '../route/approute.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -102,8 +103,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 textStyle: TextStyle(color: Colors.red),
                 child: Text("Yes"),
                 onPressed: () async {
-                  FirebaseAuth.instance.signOut();
-                  Get.offAllNamed(Routes.logInScreen);
+                  // Future.delayed(Duration(seconds: 5)).then((value){
+                  //   CustomDialogs.getInstance.showProgressDialog();
+
+                   await FirebaseAuth.instance.signOut();
+                    Get.offAllNamed(Routes.logInScreen);
+                   //  CustomDialogs.getInstance.hideProgressDialog();
+
+                  // });
 
                 },
               ),

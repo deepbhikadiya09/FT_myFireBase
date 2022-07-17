@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../component/common_function.dart';
 import '../route/approute.dart';
 
 class SignUpController extends GetxController{
@@ -15,6 +16,7 @@ class SignUpController extends GetxController{
   FocusNode passwordSignUpFocusNode = FocusNode();
   FocusNode confirmPasswordSignUpFocusNode = FocusNode();
   Future signUpData() async {
+    CustomDialogs.getInstance.showProgressDialog();
     if (emailSignUpController.text.isNotEmpty &
     passwordSignUpController.text.isNotEmpty &
     confirmPasswordSignUpController.text.isNotEmpty) {
@@ -22,6 +24,7 @@ class SignUpController extends GetxController{
         email: emailSignUpController.text.trim(),
         password: passwordSignUpController.text.trim(),
       );
+      CustomDialogs.getInstance.hideProgressDialog();
       Get.toNamed(Routes.homeScreen);
     }
   }

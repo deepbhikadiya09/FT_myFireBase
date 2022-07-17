@@ -41,7 +41,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
       child: Scaffold(
         /// APP BAR
         appBar: AppBar(
-          automaticallyImplyLeading: false,
+          // automaticallyImplyLeading: false,
           title: const Text("Sign Up"),
           centerTitle: true,
         ),
@@ -142,7 +142,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       focusNode:
                           signUpController.confirmPasswordSignUpFocusNode,
                       hint: "confirmPassword",
-                      textInputAction: TextInputAction.next,
+                      textInputAction: TextInputAction.done,
                       keyboardType: TextInputType.visiblePassword,
                       validator: (val) {
                         if (val!.isEmpty) {
